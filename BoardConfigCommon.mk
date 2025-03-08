@@ -68,5 +68,17 @@ BOARD_VENDOR_RAMDISK_KERNEL_MODULES += $(sort $(BOARD_VENDOR_RAMDISK_KERNEL_MODU
 BOARD_VENDOR_KERNEL_MODULES_LOAD += $(strip $(shell cat $(COMMON_PATH)/modules.load.common.vendor))
 BOARD_VENDOR_KERNEL_MODULES += $(wildcard $(KERNEL_PATH)/common_vendor-modules/*.ko)
 
+# Partitions
+AB_OTA_UPDATER := true
+AB_OTA_PARTITIONS += \
+    boot \
+    product \
+    system \
+    system_ext \
+    vbmeta \
+    vbmeta_system \
+    vendor \
+    vendor_boot 
+
 # Inherit the proprietary files
 include vendor/motorola/mt6768-common/BoardConfigVendor.mk
