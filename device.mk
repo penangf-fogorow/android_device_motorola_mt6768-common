@@ -94,6 +94,12 @@ PRODUCT_PACKAGES += \
     com.android.hardware.boot \
     android.hardware.boot-service.default_recovery
 
+# Camera
+PRODUCT_PACKAGES += \
+    android.hardware.camera.device@3.6.vendor \
+    android.hardware.camera.provider@2.6.vendor \
+    libcamera2ndk_vendor
+    
 # Dolpy
 PRODUCT_COPY_FILES += \
      $(COMMON_PATH)/configs/dolby/dax-default.xml:$(TARGET_COPY_OUT_VENDOR)/etc/dolby/dax-default.xml
