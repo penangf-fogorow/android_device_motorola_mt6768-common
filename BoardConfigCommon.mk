@@ -103,5 +103,9 @@ BOARD_MOTOROLA_DYNAMIC_PARTITIONS_SIZE := 8585740288
 
 BOARD_USES_METADATA_PARTITION := true
 
+# Platform
+BOARD_HAS_MTK_HARDWARE := true
+BOARD_HAVE_MTK_FM := true
+
 # Inherit the proprietary files
 include vendor/motorola/mt6768-common/BoardConfigVendor.mk
