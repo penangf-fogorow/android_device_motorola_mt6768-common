@@ -49,5 +49,20 @@ LOCAL_KERNEL := $(KERNEL_PATH)/$(BOARD_KERNEL_IMAGE_NAME)
 PRODUCT_COPY_FILES += \
 	$(LOCAL_KERNEL):kernel
 
+## vendor_boot modules
+BOARD_VENDOR_RAMDISK_KERNEL_MODULES_LOAD += $(strip $(shell cat $(COMMON_PATH)/modules.load.common.vendor_boot))
+BOARD_VENDOR_RAMDISK_KERNEL_MODULES += $(addprefix $(KERNEL_PATH)/common_vendor_boot-modules/, $(BOARD_VENDOR_RAMDISK_KERNEL_MODULES_LOAD))
+
+## recovery modules
+BOARD_VENDOR_RAMDISK_RECOVERY_KERNEL_MODULES_LOAD += $(strip $(shell cat $(COMMON_PATH)/modules.load.common.recovery))
+RECOVERY_MODULES += $(addprefix $(KERNEL_PATH)/common_vendor_boot-modules/, $(BOARD_VENDOR_RAMDISK_RECOVERY_KERNEL_MODULES_LOAD))
+
+## Prevent duplicated entries (to solve duplicated build rules problem)
+BOARD_VENDOR_RAMDISK_KERNEL_MODULES += $(sort $(BOARD_VENDOR_RAMDISK_KERNEL_MODULES) $(RECOVERY_MODULES))
+
+## vendor modules
+BOARD_VENDOR_KERNEL_MODULES_LOAD += $(strip $(shell cat $(COMMON_PATH)/modules.load.common.vendor))
+BOARD_VENDOR_KERNEL_MODULES += $(wildcard $(KERNEL_PATH)/common_vendor-modules/*.ko)
+
 # Inherit the proprietary files
 include vendor/motorola/mt6768-common/BoardConfigVendor.mk
