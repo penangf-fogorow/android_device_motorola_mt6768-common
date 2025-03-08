@@ -64,6 +64,10 @@ PRODUCT_COPY_FILES += \
     $(COMMON_PATH)/configs/media/media_profiles_V2_0.xml:$(TARGET_COPY_OUT_VENDOR)/etc/media_profiles_V2_0.xml \
     $(COMMON_PATH)/configs/media/mtk_platform_codecs_config.xml:$(TARGET_COPY_OUT_VENDOR)/etc/mtk_platform_codecs_config.xml
    
+# Rootdir
+PRODUCT_PACKAGES += \
+    fstab.mt6768
+   
 # Wifi
 PRODUCT_COPY_FILES += \
     $(call find-copy-subdir-files,*,$(DEVICE_PATH)/configs/wifi/,$(TARGET_COPY_OUT_VENDOR)/etc/wifi)

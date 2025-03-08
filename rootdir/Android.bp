@@ -1,0 +1,13 @@
+//
+// Copyright (C) 2024 LineageOS
+//
+// SPDX-License-Identifier: Apache-2.0
+//
+
+prebuilt_etc {
+    name: "fstab.mt6768",
+    src: "etc/fstab.mt6768",
+    vendor: true,
+    ramdisk_available: true,
+    vendor_ramdisk_available: true,
+}
