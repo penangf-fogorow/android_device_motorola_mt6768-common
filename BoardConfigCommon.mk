@@ -121,5 +121,8 @@ ODM_MANIFEST_TSTS_FILES := $(COMMON_PATH)/manifest_tsts.xml
 ODM_MANIFEST_QSQS_FILES := $(COMMON_PATH)/manifest_qsqs.xml
 ODM_MANIFEST_DSDS_FILES := $(COMMON_PATH)/manifest_dsds.xml
 
+# RIL
+ENABLE_VENDOR_RIL_SERVICE := true
+
 # Inherit the proprietary files
 include vendor/motorola/mt6768-common/BoardConfigVendor.mk
