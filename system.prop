@@ -1,0 +1,7 @@
+# Zygote
+ro.zygote.preload.enable=0
+
+# Fuse Passthrough
+persist.sys.fuse.passthrough.enable=true
+
+

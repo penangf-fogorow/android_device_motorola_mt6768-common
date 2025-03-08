@@ -49,6 +49,10 @@ LOCAL_KERNEL := $(KERNEL_PATH)/$(BOARD_KERNEL_IMAGE_NAME)
 PRODUCT_COPY_FILES += \
 	$(LOCAL_KERNEL):kernel
 
+# Properties
+TARGET_SYSTEM_PROP += $(COMMON_PATH)/system.prop
+TARGET_VENDOR_PROP += $(COMMON_PATH)/vendor.prop
+
 ## vendor_boot modules
 BOARD_VENDOR_RAMDISK_KERNEL_MODULES_LOAD += $(strip $(shell cat $(COMMON_PATH)/modules.load.common.vendor_boot))
 BOARD_VENDOR_RAMDISK_KERNEL_MODULES += $(addprefix $(KERNEL_PATH)/common_vendor_boot-modules/, $(BOARD_VENDOR_RAMDISK_KERNEL_MODULES_LOAD))
