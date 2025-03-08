@@ -114,5 +114,12 @@ BOARD_USES_METADATA_PARTITION := true
 BOARD_HAS_MTK_HARDWARE := true
 BOARD_HAVE_MTK_FM := true
 
+# SKU
+ODM_MANIFEST_SKUS += ss tsts qsqs dsds
+ODM_MANIFEST_SS_FILES := $(COMMON_PATH)/manifest_ss.xml
+ODM_MANIFEST_TSTS_FILES := $(COMMON_PATH)/manifest_tsts.xml
+ODM_MANIFEST_QSQS_FILES := $(COMMON_PATH)/manifest_qsqs.xml
+ODM_MANIFEST_DSDS_FILES := $(COMMON_PATH)/manifest_dsds.xml
+
 # Inherit the proprietary files
 include vendor/motorola/mt6768-common/BoardConfigVendor.mk
