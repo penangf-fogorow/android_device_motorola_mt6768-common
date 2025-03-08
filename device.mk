@@ -168,6 +168,23 @@ PRODUCT_PACKAGES += \
     libpcap.vendor \
     android.hidl.allocator@1.0.vendor
 
+# Keymaster
+PRODUCT_PACKAGES += \
+    libpuresoftkeymasterdevice.vendor
+    libkeymaster4_1support.vendor \
+    libkeymaster41.vendor \
+    libpuresoftkeymasterdevice.vendor \
+    libsoft_attestation_cert.vendor \
+    android.hardware.keymaster@4.1.vendor 
+
+# Keystore
+PRODUCT_PACKAGES += \
+    android.hardware.hardware_keystore.xml \
+    android.hardware.hardware_keystore.km41.xml \
+    android.system.wifi.keystore@1.0.vendor \
+    libkeystore-wifi-hidl \
+    libkeystore-engine-wifi-hidl
+
 # Media
 PRODUCT_COPY_FILES += \
     $(COMMON_PATH)/configs/media/media_codecs_c2.xml:$(TARGET_COPY_OUT_VENDOR)/etc/media_codecs_c2.xml \
