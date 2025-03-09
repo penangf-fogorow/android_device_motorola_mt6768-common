@@ -306,6 +306,10 @@ TARGET_VIBRATOR_SUPPORTS_EFFECTS := true
 PRODUCT_PACKAGES += \
     android.hardware.vibrator-service.mediatek
 
+# VNDK
+PRODUCT_PACKAGES += \
+    vndservicemanager
+
 # Rootdir
 PRODUCT_PACKAGES += \
     fstab.mt6768
