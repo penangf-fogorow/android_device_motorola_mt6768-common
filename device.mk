@@ -186,6 +186,10 @@ PRODUCT_PACKAGES += \
     libkeystore-wifi-hidl \
     libkeystore-engine-wifi-hidl
 
+# Light
+PRODUCT_PACKAGES += \
+    android.hardware.lights-service.moto-mt6768
+
 # Media
 PRODUCT_PACKAGES += \
     libcodec2_hidl@1.1.vendor \
