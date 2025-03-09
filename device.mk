@@ -301,6 +301,11 @@ PRODUCT_PACKAGES += \
     android.hardware.usb-service.mediatek \
     android.hardware.usb.gadget-service.mediatek
 
+# Vibrator
+TARGET_VIBRATOR_SUPPORTS_EFFECTS := true
+PRODUCT_PACKAGES += \
+    android.hardware.vibrator-service.mediatek
+
 # Rootdir
 PRODUCT_PACKAGES += \
     fstab.mt6768
