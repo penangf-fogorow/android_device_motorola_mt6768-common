@@ -310,13 +310,21 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     vndservicemanager
 
+# Wifi
+PRODUCT_PACKAGES += \
+    android.hardware.wifi-service-lazy
+
+PRODUCT_PACKAGES += \
+    hostapd \
+    wpa_supplicant \
+    android.hardware.wifi.supplicant@1.4.vendor
+
+PRODUCT_COPY_FILES += \
+    $(call find-copy-subdir-files,*,$(DEVICE_PATH)/configs/wifi/,$(TARGET_COPY_OUT_VENDOR)/etc/wifi)
+
 # Rootdir
 PRODUCT_PACKAGES += \
     fstab.mt6768
-
-# Wifi
-PRODUCT_COPY_FILES += \
-    $(call find-copy-subdir-files,*,$(DEVICE_PATH)/configs/wifi/,$(TARGET_COPY_OUT_VENDOR)/etc/wifi)
 
 # Inherit the proprietary files
 $(call inherit-product, vendor/motorola/mt6768-common/mt6768-common-vendor.mk)
